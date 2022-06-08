@@ -38,4 +38,17 @@ def _run_alert(**context):
         raise RuntimeError(f"Unknown condition criteria: {criteria}")
 
     #Notify only if condition was met
+    if notify:
+
+        #Check which notifier to use
+        notifier = config["notifier"].strip().lower().replace(" ", "_")
+
+        #Check Slack notifier
+        if notifier == "slack":
+
+            # Call the Slack notifier
+            notifier_slack(
+                config["name"]
+            )
+
         
