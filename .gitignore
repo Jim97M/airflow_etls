@@ -1,0 +1,36 @@
+#Alert Name
+name: Slack Alert
+
+#name of the generated DAG
+nickname: slack
+
+description: > 
+   A Slack alert to show how to configure alerts in Airflow .
+   Part of the notification sent to people
+
+#Easy way to disable an alert
+enabled: false
+
+#Frequence of the alert
+interval: "@daily"
+
+#DAG owner 
+owner: airflow
+
+#Defines the condition to check against
+criteria: greater than
+
+#The value to compare against
+value: 10
+
+#The query to execute to be compared with the condition
+query: >
+  select count(*)
+  from raw.public.clients
+
+#The method of notification 
+notifier: slack
+
+#If notifier is email, this list has to be of emails addresses
+recipients:
+  - "#data-alerts"

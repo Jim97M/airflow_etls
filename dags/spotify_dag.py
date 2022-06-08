@@ -27,8 +27,10 @@ dag = DAG(
 def just_a_function():
     print("Show Tasks:")
 
+def create_dag_alert(config):
 
-run_etl = PythonOperator(
+
+ run_etl = PythonOperator(
     task_id = 'Whole_Spotify_ETL',
     python_callable = run_spotify_etl,
     dag=dag
