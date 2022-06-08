@@ -1,0 +1,33 @@
+[2022-06-08 13:03:48,625] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T06:44:00+00:00 [queued]>
+[2022-06-08 13:03:48,630] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T06:44:00+00:00 [queued]>
+[2022-06-08 13:03:48,630] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-08 13:03:48,631] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-06-08 13:03:48,631] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-08 13:03:48,641] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): Whole_Spotify_ETL> on 2022-06-08 06:44:00+00:00
+[2022-06-08 13:03:48,644] {standard_task_runner.py:52} INFO - Started process 126015 to run task
+[2022-06-08 13:03:48,647] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'spotify_dag', 'Whole_Spotify_ETL', 'scheduled__2022-06-08T06:44:00+00:00', '--job-id', '517', '--raw', '--subdir', 'DAGS_FOLDER/spotify_dag.py', '--cfg-path', '/tmp/tmpmhenrukz', '--error-file', '/tmp/tmpfib6yw84']
+[2022-06-08 13:03:48,648] {standard_task_runner.py:80} INFO - Job 517: Subtask Whole_Spotify_ETL
+[2022-06-08 13:03:48,689] {task_command.py:370} INFO - Running <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T06:44:00+00:00 [running]> on host kubernetes-worker
+[2022-06-08 13:03:48,745] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wabuyajames@gmail.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=spotify_dag
+AIRFLOW_CTX_TASK_ID=Whole_Spotify_ETL
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-08T06:44:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-08T06:44:00+00:00
+[2022-06-08 13:03:48,746] {taskinstance.py:1889} ERROR - Task failed with exception
+Traceback (most recent call last):
+  File "/home/james/airflowa/lib/python3.8/site-packages/airflow/operators/python.py", line 171, in execute
+    return_value = self.execute_callable()
+  File "/home/james/airflowa/lib/python3.8/site-packages/airflow/operators/python.py", line 189, in execute_callable
+    return self.python_callable(*self.op_args, **self.op_kwargs)
+  File "/home/james/airflow/dags/spotify_etl.py", line 49, in run_spotify_etl
+    today = datetime.datetime.now()
+AttributeError: type object 'datetime.datetime' has no attribute 'datetime'
+[2022-06-08 13:03:48,750] {taskinstance.py:1395} INFO - Marking task as UP_FOR_RETRY. dag_id=spotify_dag, task_id=Whole_Spotify_ETL, execution_date=20220608T064400, start_date=20220608T100348, end_date=20220608T100348
+[2022-06-08 13:03:48,758] {standard_task_runner.py:92} ERROR - Failed to execute job 517 for task Whole_Spotify_ETL (type object 'datetime.datetime' has no attribute 'datetime'; 126015)
+[2022-06-08 13:03:48,779] {local_task_job.py:156} INFO - Task exited with return code 1
+[2022-06-08 13:03:48,800] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check

@@ -1,0 +1,25 @@
+[2022-06-08 09:06:00,690] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T00:24:00+00:00 [queued]>
+[2022-06-08 09:06:00,700] {taskinstance.py:1159} INFO - Dependencies all met for <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T00:24:00+00:00 [queued]>
+[2022-06-08 09:06:00,700] {taskinstance.py:1356} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-08 09:06:00,700] {taskinstance.py:1357} INFO - Starting attempt 1 of 2
+[2022-06-08 09:06:00,700] {taskinstance.py:1358} INFO - 
+--------------------------------------------------------------------------------
+[2022-06-08 09:06:00,715] {taskinstance.py:1377} INFO - Executing <Task(PythonOperator): Whole_Spotify_ETL> on 2022-06-08 00:24:00+00:00
+[2022-06-08 09:06:00,724] {standard_task_runner.py:79} INFO - Running: ['airflow', 'tasks', 'run', 'spotify_dag', 'Whole_Spotify_ETL', 'scheduled__2022-06-08T00:24:00+00:00', '--job-id', '30', '--raw', '--subdir', 'DAGS_FOLDER/spotify_dag.py', '--cfg-path', '/tmp/tmpzyhwebvr', '--error-file', '/tmp/tmpflzzu81x']
+[2022-06-08 09:06:00,726] {standard_task_runner.py:80} INFO - Job 30: Subtask Whole_Spotify_ETL
+[2022-06-08 09:06:00,718] {standard_task_runner.py:52} INFO - Started process 24614 to run task
+[2022-06-08 09:06:00,780] {task_command.py:370} INFO - Running <TaskInstance: spotify_dag.Whole_Spotify_ETL scheduled__2022-06-08T00:24:00+00:00 [running]> on host kubernetes-worker
+[2022-06-08 09:06:00,867] {taskinstance.py:1569} INFO - Exporting the following env vars:
+AIRFLOW_CTX_DAG_EMAIL=wabuyajames@gmail.com
+AIRFLOW_CTX_DAG_OWNER=airflow
+AIRFLOW_CTX_DAG_ID=spotify_dag
+AIRFLOW_CTX_TASK_ID=Whole_Spotify_ETL
+AIRFLOW_CTX_EXECUTION_DATE=2022-06-08T00:24:00+00:00
+AIRFLOW_CTX_TRY_NUMBER=1
+AIRFLOW_CTX_DAG_RUN_ID=scheduled__2022-06-08T00:24:00+00:00
+[2022-06-08 09:06:00,869] {logging_mixin.py:115} INFO - Show Tasks:
+[2022-06-08 09:06:00,869] {python.py:173} INFO - Done. Returned value was: None
+[2022-06-08 09:06:00,881] {taskinstance.py:1395} INFO - Marking task as SUCCESS. dag_id=spotify_dag, task_id=Whole_Spotify_ETL, execution_date=20220608T002400, start_date=20220608T060600, end_date=20220608T060600
+[2022-06-08 09:06:00,911] {local_task_job.py:156} INFO - Task exited with return code 0
+[2022-06-08 09:06:00,954] {local_task_job.py:273} INFO - 0 downstream tasks scheduled from follow-on schedule check
