@@ -35,9 +35,7 @@ def check_if_valid_data(df: pd.DataFrame) -> bool:
 
 def run_spotify_etl():
     DATABASE_LOCATION = "sqlite3:///my_played_tracks.sqlite3"
-    USER_ID = 'Jimmy'
-    TOKEN = 'BQA87UIRvchM8JibsETDA_CCbmrFA1fjeme1i26456dgUneE-2lSHSakFvHPm4y4uXfzA6vn9CbJfQNkoh6aZDvaTOSQDHZ9dU-CbioOpmz2eKI4D50oAUxQPJAjio8tprqSBMZFOK_0NW8Q3XvEWatp0nb4_cmI0R4rG6IF'
-    #Extract Part of The ETL Process
+    TOKEN = 'BQDA3-xmVZlMBHv4sKSMz4AoawxG4bHKnriqCymdMRBjLXH_6wu2qfL3eGSwzk0iitB6JoPVUDvlc5imWKjCugg02-Pmz5zFPSp6LbvlaLd0TKMsrAFRghsZsHV9dhpSL1CqN9GiGtjEOZDvXGobV12E_ArGm5756bg18xUC'
 
     headers = {
         "Accept": "application/json",

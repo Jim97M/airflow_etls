@@ -48,7 +48,24 @@ def _run_alert(**context):
 
             # Call the Slack notifier
             notifier_slack(
-                config["name"]
+                config["name"],
+                config["description"],
+                config["recipients"],
+                config["criteria"].strip().lower(),
+                config["value"],
+                result_value,                
             )
 
+        # Unknown notifier
+        else:
+            log.error(f"Unknown notifier: {notifier}")
+            log.error("Original notifier:", config["notifier"])
+            log.error(
+                "Check the value of the 'notifier' parameter in the configuration file of this alert" 
+            )
+            raise RuntimeError(f"Unknown notifier: {notifier}")
+
+        return "OK"
+        
+            
         

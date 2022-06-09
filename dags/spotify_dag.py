@@ -33,7 +33,8 @@ def create_dag_alert(config):
  run_etl = PythonOperator(
     task_id = 'Whole_Spotify_ETL',
     python_callable = run_spotify_etl,
-    dag=dag
+    dag=dag,
 )
 
-run_etl
+
+# run_etl
